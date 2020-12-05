@@ -1,0 +1,167 @@
+body {
+    display: flex;
+    margin: 0% 15% 0%;
+    flex-direction: column;
+    background-color: lightskyblue;
+}
+
+footer {
+    font-style: italic;
+    margin: auto;
+    align-self: center;
+}
+
+hr {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    /* display: flex; */
+    /* align-self: center; */
+    /* align-content: ; */
+    padding: 2%;    
+}
+
+label {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    color: indigo;
+    background-color: lightcoral;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-weight: bold;
+}
+
+.messages {
+    background-color: lightcyan;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 2em;
+    color: green;
+    align-self: center;
+    padding: 1.5% 0%;
+
+}
+
+.navbar {
+    display: flex;
+    /* margin: 3% 20% 3%; */
+    border-radius: 20px;
+    background-color: lightcyan;
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    padding: 1% 1% 1%;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.navbar-brand {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: black;
+    margin: auto;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    /* margin-left: 5%; */
+    color: black;
+    margin: auto;
+}
+
+.navbar-brand:hover {
+    font-size: 1.6em;
+    color: lightgreen;
+}
+
+.navbar-item:hover {
+    font-size: 1.6em;
+    color: lightgreen;
+}
+
+.body-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0% 20% 0%;
+    padding: 10px;
+    font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+}
+
+/* .input-number {
+    margin: 0 auto;
+    text-align: center;
+    border: darkred;
+    border-radius: 5px;
+    padding: 10px;
+    white-space: nowrap; */
+
+
+
+.digit {
+    text-align: center;
+    letter-spacing: 2em;
+    border: 5em;
+    font-size: 3em;
+}
+
+.digit:focus-within {
+  border: 1px;
+  color: dodgerblue;
+}
+
+.name{
+    font-weight: bold;
+    text-align: center;
+    background: none;
+}
+
+
+.send-button {
+    background: lightgreen;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.play_page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.play_page-name_field {
+    /* padding: 0.5%; */
+    background-color: lightsalmon;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.play_page-play_notepad {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.play_page-play_notepad-display_field{
+    background-color: lawngreen;
+    flex-wrap: wrap;
+
+}
+
+.play_page-play_notepad-input_field{
+    background-color: darkmagenta;
+    flex-wrap: wrap;
+}
+
