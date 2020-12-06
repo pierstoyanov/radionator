@@ -2,16 +2,29 @@ from django.shortcuts import render
 
 from django.views import View
 
+from radio.models import RadioStation
+
+from radio.common.functionality import *
 # Create your views here.
 
 
 class RadioIndex(View):
 
     def get(self, request):
-        context = {
 
+        cookie_state = test_cooke(request)
+        request.session.set_test_cookie()
+
+        context = {
+            'cookie_state': cookie_state
         }
-        return render(request, 'radio.html', context)
+
+        if RadioStation.objects.all():
+            context['stations'] = RadioStation.objects.all()
+
+
+
+        return render(request, 'home.html', context)
 
     def post(self, request):
         pass

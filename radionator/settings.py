@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'radio'
+
+    'radio',
+    'profiles'
+
 ]
 
 MIDDLEWARE = [
@@ -127,6 +130,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
+STATICFILES_DIRS = (
     join(BASE_DIR, 'static'),
-]
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = join(BASE_DIR, 'media')

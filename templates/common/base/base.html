@@ -8,9 +8,12 @@
 
     {% load static %}
     <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cookie.css' %}"/>
+
 </head>
 <body>
+
     <div class="title">Welcome to Radionator</div>
 
     {% include 'common/navbar.html' %}
@@ -26,7 +29,8 @@
     </div>
 
     <hr/>
+    {% include "common/cookie_block.html" %}
     {% include 'common/footer.html' %}
-
+    <script src = "{% static 'javascript/player.js' %}"></script>
 </body>
 </html>
