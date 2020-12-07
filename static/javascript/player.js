@@ -1,13 +1,52 @@
-// //Play button solution from https://stackoverflow.com/a/46258190/13673831
+// Javascript solution sources:
+// https://stackoverflow.com/a/46258190/13673831
+// https://www.codeinwp.com/snippets/add-event-listener-to-multiple-elements-with-javascript/
+// https://stackoverflow.com/questions/20616430/html5-javascript-play-pause-button
+// https://stackoverflow.com/questions/27258169/how-can-i-stop-and-resume-a-live-audio-stream-in-html5-instead-of-just-pausing-i
+
+// let isStreaming = false;
+// let playButtons = document.querySelectorAll("play_button");
 //
-// //https://stackoverflow.com/questions/20616430/html5-javascript-play-pause-button
+// function playRadio() {
+//     let radioURL = document.createElement("audio");
+//     radioURL.src = "{{ station.url }}";
+//     radioURL.play()}
+//     // if (isStreaming === false) {
+//     //     radioURL.play()
+//     //     isStreaming = true
+//     //     console.log("playing")
+//     // } else {
+//     //     radioURL.pause()
+//     //     setTimeout(function () {
+//     //         radioURL.load() // This stops the stream from downloading
+//     //     })
+//     //     console.log("stopped")
+//     //     isStreaming = false;
+//     // }
+// // }
 //
-// function playRadio () {
-//   document.getElementById("play_button").addEventListener("click")
+// for (i of playButtons) {
+//     i.addEventListener("click", playRadio())
 // }
+
+
+function Play_Audio(){
+  var audioElement = document.createElement("audio",);
+  audioElement.src = stationUrl;
+  document.getElementById("play_button").addEventListener("click", function(music){
+    audioElement.play();
+  }, false);
+}
+Play_Audio();
+
+
 //
 //
 //
+// playRadio();
+
+
+
 //
 //
 // var radioStreaming = false;

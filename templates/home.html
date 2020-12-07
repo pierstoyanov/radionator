@@ -1,14 +1,22 @@
 {% extends "common/base/base.html" %}
 {% block content %}
     {% if stations %}
-{#        {% for station in stations %}#}
-{#            {{ station.name }}#}
-{#            {{ station.logo }}#}
-{#            {{ statio.url }}#}
-{#        {% endfor %}#}
-        print hello
+        <ul>
+            {% for station in stations %}
+            <li>
+                <img class="radio-logo" src="{{ station.logo.url }}" alt="radio logo"/>
+                {{ station.name }}
+
+                <audio id="innerAudio" controls preload="none" class="audio_volume_only">
+                    <source src="{{ station.url }}"/>
+                </audio>
+
+                <script type="text/javascript">
+                var stationUrl = "{{ station.url }}"
+                </script>
+                <button id="play_button">Play (TODO: MAKE THIS BUTTON STOP PLAYING)</button>
+            </li>
+            {% endfor %}
+        </ul>
     {% endif %}
-
-    <button id="play_button">Play</button>
-
 {% endblock %}

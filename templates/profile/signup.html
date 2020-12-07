@@ -1,0 +1,17 @@
+{% extends "common/base/base.html" %}
+{% block content %}
+    {% load bootstrap4 %}
+    <h1 class="text-center">Sign up in Radionator</h1>
+    <h4 class="text-center text-muted">This lets you create personalised radio station lists</h4>
+    <div class="row d-flex justify-content-center">
+        <form method="POST" action="{% url 'sign up' %}">
+            {% csrf_token %}
+            {% bootstrap_form signup_form %}
+            {% bootstrap_form profile_form %}
+            {% buttons %}
+                <button class="btn btn-primary">Sign up</button>
+    {#        <button type="submit" class="send-button">Sign up</button>#}
+            {% endbuttons %}
+        </form>
+    </div>
+{% endblock %}
