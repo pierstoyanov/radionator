@@ -1,5 +1,7 @@
 {% extends "common/base/base.html" %}
 {% block content %}
-    {{ csrf_token }}
+    {% if user.is_authenticated %}
+    {{ user.name }}
+    {% endif %}
 
 {% endblock %}

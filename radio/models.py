@@ -1,5 +1,6 @@
+from django.contrib.auth.models import User
 from django.db import models
-from profiles.models import UserProfile
+from profiles.models import Profile
 
 # Create your models here.
 
@@ -28,7 +29,7 @@ class RadioStation(models.Model):
 
 
 class FavouritesList(models.Model):
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     list_name = models.TextField(max_length=40, default='Playlist')
     radio_stations = models.ManyToManyField(RadioStation, default=None)
 

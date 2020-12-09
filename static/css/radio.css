@@ -1,0 +1,15 @@
+.radio-station {
+    display: flex;
+    margin: 1%;
+}
+
+.radio-logo {
+    /*display: flex;*/
+    max-height: 100px ;
+}
+
+.radio-name {
+    font-family: 'serif';
+    font-size: medium;
+
+}

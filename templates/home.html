@@ -3,7 +3,8 @@
     {% if stations %}
         <ul>
             {% for station in stations %}
-            <li>
+            <div class="radio-station">
+                <li>
                 <img class="radio-logo" src="{{ station.logo.url }}" alt="radio logo"/>
                 {{ station.name }}
 
@@ -15,7 +16,8 @@
                 var stationUrl = "{{ station.url }}"
                 </script>
                 <button id="play_button">Play (TODO: MAKE THIS BUTTON STOP PLAYING)</button>
-            </li>
+                </li>
+            </div>
             {% endfor %}
         </ul>
     {% endif %}

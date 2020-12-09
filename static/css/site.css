@@ -1,3 +1,9 @@
+@import "navbar.css";
+@import "radio.css";
+@import "messages.css";
+@import "bg_options.css";
+@import "cookie.css";
+
 /*#todo remove css from bulls and cows project*/
 body {
     display: flex;
@@ -33,17 +39,6 @@ hr {
 /*    font-style: italic;*/
 /*}*/
 
-
-/*li {*/
-/*    font-weight: bold;*/
-/*}*/
-
-.messages {
-    background-color: black;
-    color: lawngreen;
-    border-radius: 20px;
-}
-
 .title {
     font-weight: 500;
     font-size: 2em;
@@ -51,51 +46,6 @@ hr {
     align-self: center;
     padding: 1.5% 0%;
 
-}
-
-.navbar {
-    display: flex;
-    /* margin: 3% 20% 3%; */
-    border-radius: 20px;
-    background-color: lightcyan;
-    font-size: 1em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
-    padding: 1% 1% 1%;
-    align-content: flex-start;
-    flex-wrap: wrap;
-
-}
-
-.navbar-brand {
-    font-size: 1.4em;
-    font-weight: 600;
-    color: black;
-    margin: auto;
-}
-
-.navbar-item {
-    font-variant: small-caps;
-    /* margin-left: 5%; */
-    color: black;
-    margin: auto;
-}
-
-/*not working for active! #todo*/
-/*.navbar-item:active {*/
-/*    font-variant: small-caps;*/
-/*    !* margin-left: 5%; *!*/
-/*    color: yellow;*/
-/*    background: darkred;*/
-/*    margin: auto;*/
-/*}*/
-
-.navbar-brand:hover {
-    color: lightgreen;
-}
-
-.navbar-item:hover {
-    /*font-size: 1.6em;*/
-    color: lightgreen;
 }
 
 .body-content {
@@ -107,34 +57,6 @@ hr {
     font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
 }
 
-/* .input-number {
-    margin: 0 auto;
-    text-align: center;
-    border: darkred;
-    border-radius: 5px;
-    padding: 10px;
-    white-space: nowrap; */
-
-
-
-.digit {
-    text-align: center;
-    letter-spacing: 2em;
-    border: 5em;
-    font-size: 3em;
-}
-
-.digit:focus-within {
-  border: 1px;
-  color: dodgerblue;
-}
-
-.name{
-    font-weight: bold;
-    text-align: center;
-    background: none;
-}
-
 
 .send-button {
     background: lightgreen;
@@ -142,62 +64,3 @@ hr {
     border-radius: 10px;
 }
 
-.play_page {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    /* align-items: center; */
-}
-
-.play_page-name_field {
-    /* padding: 0.5%; */
-    background-color: lightsalmon;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.play_page-play_notepad {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.play_page-play_notepad-display_field{
-    background-color: lawngreen;
-    flex-wrap: wrap;
-
-}
-
-.play_page-play_notepad-input_field{
-    background-color: darkmagenta;
-    flex-wrap: wrap;
-}
-
-
-
-.radio-logo {
-    /*display: flex;*/
-    max-height: 100px ;
-}
-
-.radio-name {
-    font-family: 'serif';
-    font-size: medium;
-
-}
-
-option[value=background_1] {
-    background-color: darkred;
-}
-
-option[value=background_2] {
-    background-color: lawngreen;
-}
-
-option[value=background_3] {
-    background-color: plum;
-}
-option[value=background_4] {
-    background-color: blueviolet;
-}

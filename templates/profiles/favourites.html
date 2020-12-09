@@ -1,6 +1,7 @@
 {% extends "common/base/base.html" %}
 {% block content %}
-    <form method="POST", action="{% url 'log in' %}">
+    {% if user.is_authenticated %}
+     here
+    {% endif %}
 
-    </form>
 {% endblock %}
