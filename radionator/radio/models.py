@@ -1,11 +1,11 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
-from radionator.profiles.models import Profile
+
 
 # Create your models here.
-
-
 class RadioStation(models.Model):
+    """This model contains the data about a single radio station.
+    It has a many to many relation with the FavouritesList model."""
     POP = 'p1'
     ROCK = 'r1'
     CLASSICAL = 'c1'
@@ -29,7 +29,11 @@ class RadioStation(models.Model):
 
 
 class FavouritesList(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    """This is the playlist model that contains a collection of
+    RadioStation instances belonging to one user.
+    It has a FK relation to the User and a Many to Many relation
+    with the RadioStation model. """
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     list_name = models.TextField(max_length=40, default='Playlist')
     is_main = models.BooleanField(default=False)
     radio_stations = models.ManyToManyField(RadioStation, default=None)

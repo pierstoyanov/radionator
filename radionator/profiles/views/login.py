@@ -1,10 +1,11 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
 
 from common.BootstrapFormMixin import BootstrapFormMixin
 
-
+User = get_user_model()
 #
 # def get_redirect_url(params):
 #     redirect_url = params.get('return_url')
@@ -14,8 +15,8 @@ from radionator.profiles.forms import LoginForm
 
 
 class LogIn(LoginView, BootstrapFormMixin, SuccessMessageMixin):
-    form_class = LoginForm
     template_name = 'profiles/login.html'
+    form_class = LoginForm
     success_message = f'Welcome! '
 
 

@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
 
-
 ]
 
 MIDDLEWARE = [
@@ -137,3 +136,5 @@ MEDIA_ROOT = join(BASE_DIR, 'media')
 LOGIN_URL = '/profiles/u-login/'
 LOGIN_REDIRECT_URL = '/profiles/myprofile/'
 #
+"""AUTH_USER_MODEL uses the default Django value."""
+# AUTH_USER_MODEL = 'auth.User'

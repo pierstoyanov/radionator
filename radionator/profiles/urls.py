@@ -10,11 +10,11 @@ from radionator.profiles.views.favourites import Favourites
 
 
 urlpatterns = [
-    path('', include('django.contrib.auth.urls')),
-    path('signup/', SignUp.as_view(), name='sign up'),
-    path('u-login/', LogIn.as_view(), name='log in'),
-    path('u-logout/', LogOut.as_view(), name='log out'),
-    path('myprofile/', MyProfile.as_view(), name='my profile'),
+    # path('', include('django.contrib.auth.urls')),
+    path('signup/', SignUp.as_view(), name='sign-up'),
+    path('login/', LogIn.as_view(), name='login'),
+    path('logout/', LogOut.as_view(), name='logout'),
+    path('myprofile/', MyProfile.as_view(), name='my-profile'),
     path('favourites/', Favourites.as_view(), name='favorites'),
 
 

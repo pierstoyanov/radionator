@@ -5,21 +5,21 @@
 
     {% if user.is_authenticated %}
         <a class="navbar-item" href="{% url 'favorites' %}">Favorites</a>
-        <a class="navbar-item" href="{% url 'my profile' %}">My Profile</a>
+        <a class="navbar-item" href="{% url 'my-profile' %}">My Profile</a>
     {% endif %}
 
 
 
     <div class="navbar-greet_user">
         {% if not user.is_authenticated %}
-        <a class="navbar-greet_user-a" href="{% url 'sign up' %}">Sign up</a>|
+        <a class="navbar-greet_user-a" href="{% url 'sign-up' %}">Sign up</a>|
         {% endif %}
 
         {% if user.is_authenticated %}
             <div class="greeting">Hello, {{ user.username }}! |</div>
-            <a class="navbar-greet_user-a" href="{% url 'log out' %}">Logout</a>
+            <a class="navbar-greet_user-a" href="{% url 'logout' %}">Logout</a>
         {% else %}
-            <a class="navbar-greet_user-a" href="{% url 'log in' %}">Login</a>
+            <a class="navbar-greet_user-a" href="{% url 'login' %}">Login</a>
         {% endif %}
     </div>
 </div>

@@ -1,8 +1,10 @@
+from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
 
 
 # Create your models here.
+from radionator.radio.models import FavouritesList
+
 
 class Profile(models.Model):
     BACKGROUND1 = 'bg_1'
@@ -16,8 +18,9 @@ class Profile(models.Model):
         (BACKGROUND4, 'Background 4'),
     )
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     background = models.CharField(choices=BACKGROUND_CHOICES, default=BACKGROUND1, max_length=4)
+    default_playlist = models.OneToOneField(FavouritesList, on_delete=models.CASCADE,)
 
     def __str__(self):
         return f'User: {self.user}, Current background: {self.background}'

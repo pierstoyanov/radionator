@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.views import View
 
@@ -7,6 +8,7 @@ from django.views.generic import FormView
 
 from radionator.profiles.forms import UserProfileForm
 
+User = get_user_model()
 
 class LogOut(View):
     def get(self, request):

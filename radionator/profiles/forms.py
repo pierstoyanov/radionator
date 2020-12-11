@@ -14,15 +14,9 @@ class SignUpForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user',)
+        exclude = ('user', 'default_playlist')
 
 
 class LoginForm(AuthenticationForm):
-    pass
-    # def __init__(self):
-    #     super(CaseForm, self).__init__()
-
-# class LoginForm(forms.ModelForm):
-#     class Meta:
-#         model = User
-#         fields = ['username', 'password']
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
