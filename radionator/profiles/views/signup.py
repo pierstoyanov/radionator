@@ -4,7 +4,7 @@ from django.db import transaction
 from django.shortcuts import render, redirect
 from django.views import View
 
-from profiles.forms import UserProfileForm, SignUpForm
+from radionator.profiles.forms import UserProfileForm, SignUpForm
 
 
 class SignUp(View):
@@ -31,7 +31,8 @@ class SignUp(View):
 
             # success msg and redirect to homepage
             messages.add_message(request, messages.INFO, 'Profile Created Successfully')
-            return redirect('radio index')
+            return redirect('my profile')
+
         else:
             # return errors from user and profiles form
             messages.add_message(request, messages.INFO, 'User creation failed:')
@@ -45,4 +46,3 @@ class SignUp(View):
             }
 
             return render(request, 'profiles/signup.html', context)
-

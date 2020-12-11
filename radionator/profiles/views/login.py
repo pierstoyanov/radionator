@@ -1,20 +1,24 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect
-from django.views import View
+from django.contrib.messages.views import SuccessMessageMixin
 
 from common.BootstrapFormMixin import BootstrapFormMixin
-from profiles.forms import LoginForm
+
+
 #
 # def get_redirect_url(params):
 #     redirect_url = params.get('return_url')
 #     return redirect_url if redirect_url else 'index'
 #
+from radionator.profiles.forms import LoginForm
 
 
-class LogIn(LoginView, BootstrapFormMixin):
-    # form_class = LoginForm
+class LogIn(LoginView, BootstrapFormMixin, SuccessMessageMixin):
+    form_class = LoginForm
     template_name = 'profiles/login.html'
+    success_message = f'Welcome! '
+
+
 
 
 # class LogIn(View):
@@ -22,7 +26,7 @@ class LogIn(LoginView, BootstrapFormMixin):
 #         context = {
 #             'login_form': LoginForm()
 #         }
-#         return render(request, 'profiles/login.html', context)
+#         return render(request, 'profiles/log3in.html', context)
 #
 #     def post(self, request):
 #         login_form = LoginForm(request.POST)
@@ -37,5 +41,5 @@ class LogIn(LoginView, BootstrapFormMixin):
 #             if user:
 #                 login(request, user)
 #                 return redirect(return_url)
-#         return render(request, 'profiles/login.html')
+#         return render(request, 'profiles/log3in.html')
 

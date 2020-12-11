@@ -1,5 +1,5 @@
 from django import forms
-from radio.models import RadioStation
+from radionator.radio.models import RadioStation
 
 
 class RadioStationCreateForm(forms.ModelForm):

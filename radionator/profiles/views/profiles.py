@@ -5,7 +5,7 @@ from django.views import View
 # https://stackoverflow.com/questions/48040007/django-password-validation-not-working
 from django.views.generic import FormView
 
-from profiles.forms import UserProfileForm
+from radionator.profiles.forms import UserProfileForm
 
 
 class LogOut(View):

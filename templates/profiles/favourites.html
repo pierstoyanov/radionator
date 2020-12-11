@@ -1,7 +1,13 @@
 {% extends "common/base/base.html" %}
 {% block content %}
     {% if user.is_authenticated %}
-     here
+        {% for plist in object_list %}
+            {{ plist.list_name }}
+            <ul>
+                {% for staion in plist.radio_stations %}
+                <li>{{ staion }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
     {% endif %}
-
 {% endblock %}

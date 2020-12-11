@@ -4,7 +4,6 @@
 @import "bg_options.css";
 @import "cookie.css";
 
-/*#todo remove css from bulls and cows project*/
 body {
     display: flex;
     margin: 0% 15% 0%;
@@ -41,12 +40,20 @@ hr {
 
 .title {
     font-weight: 500;
-    font-size: 2em;
+    font-size: 3em;
     color: green;
     align-self: center;
     padding: 1.5% 0%;
-
+    flex-wrap: wrap;
+    /*-webkit-text-stroke: 1px black;*/
+/*    text-shadow:*/
+/*      3px 3px 0 black,*/
+/*     -1px -1px 0 black,*/
+/*      1px -1px 0 black,*/
+/*      -1px 1px 0 black,*/
+/*      1px 1px 0 black;*/
 }
+
 
 .body-content {
     display: flex;

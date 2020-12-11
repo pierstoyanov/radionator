@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from radio.models import RadioStation, FavouritesList
+from radionator.radio.models import RadioStation, FavouritesList
 
 admin.site.register(RadioStation)
 admin.site.register([FavouritesList])

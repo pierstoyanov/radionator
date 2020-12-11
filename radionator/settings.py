@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
-    'radio',
-    'profiles',
+    'radionator.radio',
+    'radionator.profiles',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -134,5 +134,6 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
 #
-# LOGIN_URL = '/profiles/login'
+LOGIN_URL = '/profiles/u-login/'
+LOGIN_REDIRECT_URL = '/profiles/myprofile/'
 #

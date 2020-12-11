@@ -7,7 +7,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
     padding: 1% 1% 1%;
     align-content: flex-start;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 
 }
 
@@ -26,13 +26,13 @@
 }
 
 /*not working for active! #todo*/
-/*.navbar-item:active {*/
-/*    font-variant: small-caps;*/
-/*    !* margin-left: 5%; *!*/
-/*    color: yellow;*/
-/*    background: darkred;*/
-/*    margin: auto;*/
-/*}*/
+.navbar-item:active {
+    font-variant: small-caps;
+    /* margin-left: 5%; */
+    color: yellow;
+    background: darkred;
+    margin: auto;
+}
 
 .navbar-brand:hover {
     color: lightgreen;
@@ -70,6 +70,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
     margin: auto;
+    outline: blueviolet;
 }

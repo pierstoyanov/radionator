@@ -1,4 +1,5 @@
 class BootstrapFormMixin():
+    """Use this to apply bootstrap to forms in a CBV"""
     def setup_form(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

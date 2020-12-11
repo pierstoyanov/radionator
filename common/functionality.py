@@ -2,7 +2,7 @@
 
 def test_cooke(request):
     """
-    Return the result of the last test cookie.
+    Return the result of the last staged test cookie.
     returns cookie_state = bool
     """
 

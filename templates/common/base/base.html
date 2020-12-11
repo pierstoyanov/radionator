@@ -13,24 +13,26 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}"/>
 </head>
 <body>
-
     <div class="title">Welcome to Radionator</div>
 
     {% include 'common/navbar.html' %}
+        <div id='body-content'>
 
-    <div id='body-content'>
+        <hr/>
+        {% include 'common/messages.html' %}
+
+        {% block content %}
+        {% endblock %}
+
+        <hr style='width: 50%;'/>
+        </div>
     <hr/>
-    {% include 'common/messages.html' %}
 
-    {% block content %}
-
-    {% endblock %}
-    <hr style='width: 50%;'/>
-    </div>
-
-    <hr/>
     {% include "common/cookie_block.html" %}
     {% include 'common/footer.html' %}
+
     <script src = "{% static 'javascript/player.js' %}"></script>
+    <script src = "{% static 'javascript/changeFormBackground.js' %}"></script>
+    <script src = "{% static 'javascript/isActive.js' %}"></script>
 </body>
 </html>

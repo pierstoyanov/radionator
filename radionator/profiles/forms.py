@@ -1,9 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
-
-from profiles.models import Profile
+from radionator.profiles.models import Profile
 
 
 class SignUpForm(UserCreationForm):
@@ -15,14 +14,13 @@ class SignUpForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user']
+        exclude = ('user',)
 
 
-class LoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField(
-        widget=forms.PasswordInput(),
-    )
+class LoginForm(AuthenticationForm):
+    pass
+    # def __init__(self):
+    #     super(CaseForm, self).__init__()
 
 # class LoginForm(forms.ModelForm):
 #     class Meta:
