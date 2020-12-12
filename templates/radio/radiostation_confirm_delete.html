@@ -1,0 +1,13 @@
+{% extends "common/base/base.html" %}
+{% block content %}
+    <form method="POST" action="{% url 'delete radio' radiostation.pk radiostation.slug %}">
+        {% csrf_token %}
+        <p class="alert alert-danger">
+            This will DELETE {{ radiostation.name }}
+            </br>
+            ARE YOU SURE YOU WISH TO PROCEED?
+        </p>
+        <button class="btn btn-danger">Delete</button>
+        <a href="{% url 'radio index' %}" class="btn btn-outline-primary">Cancel</a>
+    </form>
+{% endblock %}

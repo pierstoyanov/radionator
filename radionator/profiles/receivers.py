@@ -4,18 +4,19 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from radionator.radio.models import FavouritesList
+from radionator.radio.models import PlayList
 
 
 @receiver(post_save, sender=User)
 def user_created(sender, instance, created, *args, **kwargs):
     """This signal track the creation of new users and
-    adds a FavouritesList in DB for the user."""
+    adds a PlayList in DB for the user."""
     if created:
-        favourites_list = FavouritesList(
+        play_list = PlayList(
             user=instance,
-            list_name='My First Station List')
-        favourites_list.save()
+            list_name='My First Station List',
+            is_user_default=True)
+        play_list.save()
 
 
 @receiver(user_logged_out, sender=User)

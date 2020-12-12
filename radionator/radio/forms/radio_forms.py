@@ -5,11 +5,14 @@ from radionator.radio.models import RadioStation
 class RadioStationCreateForm(forms.ModelForm):
     class Meta:
         model = RadioStation
-        fields = '__all__'
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'radio-name'})
-        }
+        exclude = ('slug',)
 
 
 class RadioStationDisplayForm(forms.Form):
-    pass
+    class Meta:
+        model = RadioStation
+        exclude = ('slug', 'url')
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'radio-name'})
+        }

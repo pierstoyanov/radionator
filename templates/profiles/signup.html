@@ -7,7 +7,15 @@
         <form method="POST" action="{% url 'sign-up' %}">
             {% csrf_token %}
             {% bootstrap_form signup_form %}
-            {% bootstrap_form profile_form %}
+
+{##}
+{#            <select id="select-background" onchange='change(document.getElementById("select").value)'>#}
+{#            <option value="Blue">Blue</option>#}
+{#            <option value="Red">Red</option>#}
+{#            <option value="Green">Green</option>#}
+{#            </select>#}
+            {{ profile_form.background }}
+
             {% buttons %}
                 <button class="btn btn-success btn-lg btn-block">Sign up</button>
         </form>

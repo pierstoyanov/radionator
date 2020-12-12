@@ -1,0 +1,8 @@
+{% extends "common/base/base.html" %}
+{% block content %}
+    {% load bootstrap4 %}
+
+        <a href="{% url 'edit playlist' radiostation.pk radiostation.slug %}" class="btn btn-success">Edit Playlist</a>
+        <a href="{% url 'delete playlist' radiostation.pk radiostation.slug %}" class="btn btn-sm btn-danger">Delete Playlist</a>
+
+{% endblock %}

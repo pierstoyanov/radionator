@@ -3,10 +3,11 @@ from django.db import models
 
 
 # Create your models here.
-from radionator.radio.models import FavouritesList
+from radionator.radio.models import PlayList
 
 
 class Profile(models.Model):
+    """Profile extends the user model and stores additional information about the user."""
     BACKGROUND1 = 'bg_1'
     BACKGROUND2 = 'bg_2'
     BACKGROUND3 = 'bg_3'
@@ -20,7 +21,13 @@ class Profile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     background = models.CharField(choices=BACKGROUND_CHOICES, default=BACKGROUND1, max_length=4)
-    default_playlist = models.OneToOneField(FavouritesList, on_delete=models.CASCADE,)
 
     def __str__(self):
         return f'User: {self.user}, Current background: {self.background}'
+
+
+
+
+# @property
+# def is_faculty(self):
+#     return self.groups.filter(name='Faculty group').exists()

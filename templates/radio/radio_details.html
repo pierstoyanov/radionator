@@ -1,0 +1,14 @@
+{% extends "common/base/base.html" %}
+{% block content %}
+    {% load bootstrap4 %}
+    {% if radiostation %}
+        <div class="station-details">
+            <img scr="{{ radiostation.logo }}" alt="radio logo"/>
+            {{ radiostation.name }}
+            {{ radiostation.genres }}
+            {{ radiostation.description }}
+        </div>
+        <a href="{% url 'edit radio' radiostation.pk radiostation.slug %}" class="btn btn-success">Edit radio</a>
+        <a href="{% url 'delete radio' radiostation.pk radiostation.slug %}" class="btn btn-sm btn-danger">Delete radio</a>
+    {% endif %}
+{% endblock %}

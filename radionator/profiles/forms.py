@@ -11,10 +11,22 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'email',)
 
 
-class UserProfileForm(forms.ModelForm):
+class UserProfileSignupForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ('user', 'default_playlist')
+        widgets = {
+            'background': forms.Select(attrs={'class': 'background-choice'})
+        }
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ('user',)
+        widgets = {
+            'background': forms.Select(attrs={'class': 'background-choice'})
+        }
 
 
 class LoginForm(AuthenticationForm):

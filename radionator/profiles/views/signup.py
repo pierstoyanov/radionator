@@ -4,7 +4,7 @@ from django.db import transaction
 from django.shortcuts import render, redirect
 from django.views import View
 
-from radionator.profiles.forms import UserProfileForm, SignUpForm
+from radionator.profiles.forms import UserProfileSignupForm, SignUpForm
 
 
 User = get_user_model()
@@ -14,20 +14,21 @@ class SignUp(View):
     def get(self, request):
         context = {
             'signup_form': SignUpForm(),
-            'profile_form': UserProfileForm(),
+            'profile_form': UserProfileSignupForm(),
         }
         return render(request, 'profiles/signup.html', context)
 
     @transaction.atomic
     def post(self, request):
         signup_form = SignUpForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
+        profile_form = UserProfileSignupForm(request.POST)
 
         if signup_form.is_valid() and profile_form.is_valid():
             user = signup_form.save()
 
             profile = profile_form.save(commit=False)
             profile.user = user
+
             profile.save()
 
             login(request, user)
@@ -45,7 +46,7 @@ class SignUp(View):
             # reload new forms and render the page
             context = {
                 'signup_form': SignUpForm(),
-                'profile_form': UserProfileForm(),
+                'profile_form': UserProfileSignupForm(),
             }
 
             return render(request, 'profiles/signup.html', context)

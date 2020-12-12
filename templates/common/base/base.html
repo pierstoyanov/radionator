@@ -16,6 +16,11 @@
     <div class="title">Welcome to Radionator</div>
 
     {% include 'common/navbar.html' %}
+
+    {% if request.user.is_superuser %}
+        {% include 'common/navbar-admin.html' %}
+    {% endif %}
+
         <div id='body-content'>
 
         <hr/>

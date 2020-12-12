@@ -1,7 +1,5 @@
 {% extends "common/base/base.html" %}
 {% block content %}
-    {% if user.is_authenticated %}
-    {{ user.name }}
-    {% endif %}
-
+    {% load bootstrap4 %}
+    {% bootstrap_form form %}
 {% endblock %}
