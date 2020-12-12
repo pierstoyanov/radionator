@@ -2,14 +2,16 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
+from radionator.radio.forms.radio_forms import RadioStationCreateForm
 from radionator.radio.models import RadioStation
 
 
 class AddRadio(CreateView):
     """View to create an new RadioStation object"""
     model = RadioStation
+    form_class = RadioStationCreateForm
     template_name = 'radio/radio_add.html'
-    fields = '__all__'
+
 
     success_url = reverse_lazy('radio index')
 

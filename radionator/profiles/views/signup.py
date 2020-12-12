@@ -35,7 +35,7 @@ class SignUp(View):
 
             # success msg and redirect to homepage
             messages.add_message(request, messages.INFO, 'Profile Created Successfully')
-            return redirect('my-profile')
+            return redirect('my profile')
 
         else:
             # return errors from user and profiles form

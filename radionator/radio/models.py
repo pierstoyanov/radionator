@@ -9,6 +9,7 @@ from django.utils.text import slugify
 class RadioStation(models.Model):
     """This model contains the data about a single radio station.
     It has a many to many relation with the PlayList model."""
+
     POP = 'p1'
     ROCK = 'r1'
     CLASSICAL = 'c1'
@@ -41,6 +42,7 @@ class PlayList(models.Model):
     RadioStation instances belonging to one user.
     It has a ForeignKey relation to the User and a Many to Many relation
     with the RadioStation model. """
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     slug = models.SlugField(editable=False, )
     list_name = models.TextField(max_length=40, default='Playlist')

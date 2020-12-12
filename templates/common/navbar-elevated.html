@@ -1,0 +1,8 @@
+{#{% if request.user|group:"elevated" %}#}
+{% if request.user.is_superuser %}
+    <div class="navbar admin">
+
+    <a class="navbar btn btn-outline-success" href="{% url 'add radio' %}">Add Radio</a>
+{#    <a class="navbar btn btn-outline-warning" href="{% url %}"#}
+    </div>
+{% endif %}

@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import View
 
 
@@ -12,6 +13,10 @@ from radionator.profiles.forms import UserProfileSignupForm, UserProfileForm
 User = get_user_model()
 
 
-class MyProfile(FormView, BootstrapFormMixin):
+class MyProfile(BootstrapFormMixin, FormView):
     template_name = 'profiles/myprofile.html'
     form_class = UserProfileForm
+    success_url = reverse_lazy('my profile')
+
+    def form_valid(self, form):
+        form.save()

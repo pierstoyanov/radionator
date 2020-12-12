@@ -14,7 +14,7 @@ urlpatterns = [
     path('signup/', SignUp.as_view(), name='sign-up'),
     path('login/', LogIn.as_view(), name='login'),
     path('logout/', LogOut.as_view(), name='logout'),
-    path('myprofile/', MyProfile.as_view(), name='my-profile'),
+    path('myprofile/', MyProfile.as_view(), name='my profile'),
     path('favourites/', Favourites.as_view(), name='favorites'),
 
 

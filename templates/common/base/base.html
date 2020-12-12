@@ -17,9 +17,8 @@
 
     {% include 'common/navbar.html' %}
 
-    {% if request.user.is_superuser %}
-        {% include 'common/navbar-admin.html' %}
-    {% endif %}
+
+    {% include 'common/navbar-elevated.html' %}
 
         <div id='body-content'>
 
