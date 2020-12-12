@@ -3,10 +3,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
+from common.BackgroundMixin import BackgroundMixin
 from radionator.radio.models import PlayList
 
 
-class CreatePlayList(LoginRequiredMixin, CreateView):
+class CreatePlayList(BackgroundMixin, LoginRequiredMixin, CreateView):
     """View to create an new PlayList object"""
     model = PlayList
     template_name = 'radio/playlist_create.html'
@@ -16,9 +17,8 @@ class CreatePlayList(LoginRequiredMixin, CreateView):
 
 
 #TODO edit pemissions
-class PlayListDetails(LoginRequiredMixin, DetailView):
-    """View to display a PlayList object.
-    User can edit self.playlists.
+class PlayListDetails(BackgroundMixin, LoginRequiredMixin, DetailView):
+    """View to display a PlayList object. User can edit self.playlists.
     Elevated can edit any playlist."""
     model = PlayList
     template_name = 'radio/playlist_details.html/'
@@ -27,7 +27,7 @@ class PlayListDetails(LoginRequiredMixin, DetailView):
 #TODO Edit Delete foor elevated users only
 
 
-class EditPlayList(LoginRequiredMixin, UpdateView):
+class EditPlayList(BackgroundMixin, LoginRequiredMixin, UpdateView):
     """Change the RadioStations in the Playlist. Returns MSG if successful"""
     model = PlayList
     fields = '__all__'
@@ -39,7 +39,7 @@ class EditPlayList(LoginRequiredMixin, UpdateView):
         return reverse_lazy('radio index')
 
 
-class DeletePlayList(LoginRequiredMixin, DeleteView):
+class DeletePlayList(BackgroundMixin, LoginRequiredMixin, DeleteView):
     """Delete the PlayList object. Returns MSG if successful"""
     model = PlayList
 

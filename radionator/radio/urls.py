@@ -3,16 +3,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from radionator.radio.views.home import RadioIndex
-from radionator.radio.views.common import about
-from radionator.radio.views.playlist_crud import CreatePlayList, PlayListDetails, EditPlayList, DeletePlayList
-
+from radionator.radio.views.common import About
+from radionator.radio.views.playlist_crud import \
+        CreatePlayList, PlayListDetails, EditPlayList, DeletePlayList
 from radionator.radio.views.radio_crud import \
-    AddRadio, RadioDetails, EditRadio, DeleteRadio
+        AddRadio, RadioDetails, EditRadio, DeleteRadio
 
 
 urlpatterns = [
         path('', RadioIndex.as_view(), name='radio index'),
-        path('about/', about, name='about'),
+        path('about/', About.as_view(), name='about'),
 
         path('add/', AddRadio.as_view(), name='add radio'),
         path('<int:pk>/<slug:slug>/', RadioDetails.as_view(), name='radio details'),

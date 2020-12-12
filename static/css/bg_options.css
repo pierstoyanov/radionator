@@ -2,7 +2,6 @@ option[value=bg_1] {
     background-color: lightskyblue;
 }
 
-
 option[value=bg_2] {
     background-color: lawngreen;
 }
@@ -10,7 +9,7 @@ option[value=bg_2] {
 option[value=bg_3] {
     background-color: plum;
 }
+
 option[value=bg_4] {
     background-color: blueviolet;
 }
-

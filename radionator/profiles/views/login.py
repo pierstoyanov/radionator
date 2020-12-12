@@ -13,10 +13,11 @@ User = get_user_model()
 
 
 class LogIn(BootstrapFormMixin, SuccessMessageMixin, LoginView):
+    """Generic view for user login."""
     template_name = 'profiles/login.html'
     form_class = LoginForm
 
     def get_success_url(self):
         messages.add_message(self.request, messages.INFO,
                              f'Welcome back!')
-        return reverse_lazy('my profile')
+        return reverse_lazy('radio index')

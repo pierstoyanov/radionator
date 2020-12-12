@@ -6,5 +6,6 @@ User = get_user_model()
 
 
 class LogOut(LogoutView):
+    """"Logout view, redirects to home"""
     next_page = reverse_lazy('radio index')
 

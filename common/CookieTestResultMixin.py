@@ -21,10 +21,11 @@ class CookeTestResultMixin:
     #     cookie_state = test_cooke(request)
     #     request.session['cookie_state'] = cookie_state
 
-    def get_context_data(self, request, *args, **kwargs):
-        context = super(self).get_context_data(**kwargs)
-        context['cookie_state'] = test_cookie(request)
-        return super(CookeTestResultMixin, self).get_context_data(request, *args, **kwargs)
+    def get_context_data(self, *args, **kwargs):
+        context = super(CookeTestResultMixin, self).get_context_data(*args, **kwargs)
+        context['cookie_state'] = test_cookie(self.request)
+        return context
+
 
 
 

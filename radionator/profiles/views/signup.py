@@ -4,6 +4,7 @@ from django.db import transaction
 from django.shortcuts import render, redirect
 from django.views import View
 
+from common.BackgroundMixin import BackgroundMixin
 from radionator.profiles.forms import UserProfileSignupForm, SignUpForm
 
 

@@ -1,5 +1,3 @@
-
-
 def test_cooke(request):
     """
     Return the result of the last staged test cookie.

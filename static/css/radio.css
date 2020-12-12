@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column wrap;
     margin: 2%;
-    /*align-content: space-around;*/
+    /*align-content: space-between;*/
 }
 
 .station-li {
@@ -44,7 +44,6 @@ audio::-webkit-media-controls-play-button  {
 audio::-webkit-media-controls-timeline {
   display: none;
 }
-
 
 audio::-webkit-media-controls-current-time-display  {
   display: none;

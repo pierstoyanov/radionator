@@ -11,10 +11,6 @@
                             <source src="{{ station.url }}"/>
                         </audio>
                     </div>
-{#                    <script type="text/javascript">#}
-{#                    var stationUrl = "{{ station.url }}"#}
-{#                    </script>#}
-{#                    <button id="play_button">Play (TODO: )</button>#}
                     <a href="{% url 'radio details' station.pk station.slug %}" class="btn btn-lg btn-outline-primary">More</a>
                 </li>
             {% endfor %}
