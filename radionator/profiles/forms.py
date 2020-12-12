@@ -20,10 +20,10 @@ class UserProfileSignupForm(forms.ModelForm):
         }
 
 
-class UserProfileForm(forms.ModelForm):
+class UserProfileViewForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user',)
+        fields = "__all__"
         widgets = {
             'background': forms.Select(attrs={'class': 'background-choice'})
         }

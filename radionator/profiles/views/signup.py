@@ -28,14 +28,13 @@ class SignUp(View):
 
             profile = profile_form.save(commit=False)
             profile.user = user
-
             profile.save()
 
             login(request, user)
 
             # success msg and redirect to homepage
             messages.add_message(request, messages.INFO, 'Profile Created Successfully')
-            return redirect('my profile')
+            return redirect('radio index')
 
         else:
             # return errors from user and profiles form

@@ -5,18 +5,22 @@ from django.views import View
 
 
 # https://stackoverflow.com/questions/48040007/django-password-validation-not-working
-from django.views.generic import FormView
+from django.views.generic import FormView, DetailView, UpdateView
 
+from common.BackgroundMixin import BackgroundMixin
 from common.BootstrapFormMixin import BootstrapFormMixin
-from radionator.profiles.forms import UserProfileSignupForm, UserProfileForm
+from radionator.profiles.forms import UserProfileSignupForm, UserProfileViewForm
+from radionator.profiles.models import Profile
 
 User = get_user_model()
 
 
-class MyProfile(BootstrapFormMixin, FormView):
-    template_name = 'profiles/myprofile.html'
-    form_class = UserProfileForm
+class ProfileUpdate(BackgroundMixin, BootstrapFormMixin, UpdateView):
+    model = Profile
+    fields = ('background',)
+    template_name_suffix = '_update_form'
+    # form_class = UserProfileViewForm
     success_url = reverse_lazy('my profile')
 
-    def form_valid(self, form):
-        form.save()
+    def get_object(self):
+        return Profile.objects.get(user=self.request.user.pk)

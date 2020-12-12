@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from radionator.profiles.views.signup import SignUp
 from radionator.profiles.views.login import LogIn
 from radionator.profiles.views.logout import LogOut
-from radionator.profiles.views.profiles import MyProfile
+from radionator.profiles.views.profiles import ProfileUpdate
 from radionator.profiles.views.favourites import Favourites
 
 
@@ -14,7 +14,7 @@ urlpatterns = [
     path('signup/', SignUp.as_view(), name='sign-up'),
     path('login/', LogIn.as_view(), name='login'),
     path('logout/', LogOut.as_view(), name='logout'),
-    path('myprofile/', MyProfile.as_view(), name='my profile'),
+    path('myprofile/', ProfileUpdate.as_view(), name='my profile'),
     path('favourites/', Favourites.as_view(), name='favorites'),
 
 

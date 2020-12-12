@@ -50,5 +50,5 @@ class PlayList(models.Model):
     radio_stations = models.ManyToManyField(RadioStation, default=None)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.list_name)
         return super().save(*args, **kwargs)
