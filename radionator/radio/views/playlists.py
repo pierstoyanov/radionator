@@ -3,11 +3,14 @@ from django.views.generic import ListView
 
 from radionator.radio.models import PlayList
 
-User = get_user_model()
+RadioUser = get_user_model()
+
+from common.BackgroundMixin import BackgroundMixin
+
 
 # @requires_login
-class Favourites(ListView):
-    template_name = 'profiles/favourites.html'
+class Playlists(BackgroundMixin, ListView):
+    template_name = 'profiles/playlists.html'
     model = PlayList
 
     def get_queryset(self):

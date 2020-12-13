@@ -3,6 +3,7 @@
     {% load bootstrap4 %}
 
     <p class="text-success">Current background is: {{ background }}</p>
+
     <form method="POST" action="{% url 'my profile' user.pk %}">
         {% csrf_token %}
         {% bootstrap_form form %}

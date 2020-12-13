@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
@@ -6,6 +7,8 @@ from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from common.BackgroundMixin import BackgroundMixin
 from radionator.radio.forms.radio_forms import RadioStationCreateForm
 from radionator.radio.models import RadioStation
+
+RadioUser = get_user_model()
 
 
 class AddRadio(BackgroundMixin, LoginRequiredMixin, CreateView):
@@ -21,6 +24,11 @@ class RadioDetails(BackgroundMixin, DetailView):
     This leads to EDIT AND DELETE views for elevated users only"""
     model = RadioStation
     template_name = 'radio/radio_details.html'
+    context_object_name = 'station'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(RadioDetails, self).get_context_data(*args, **kwargs)
+        return context
 
 
 class EditRadio(BackgroundMixin, LoginRequiredMixin, UpdateView):

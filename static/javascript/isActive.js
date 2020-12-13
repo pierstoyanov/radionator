@@ -4,9 +4,9 @@
 //     }
 // });
 //TODO Active current page in navbar
-
-$(document).ready(function(e){
-         var pathname = window.location.pathname;
-         atag = $('.dropdown a[href="'+pathname+'"]'); "navbar-item"
-         atag.parent().addClass("active");
-       });
+//
+// $(document).ready(function(e){
+//          var pathname = window.location.pathname;
+//          atag = $('.dropdown a[href="'+pathname+'"]'); "navbar-item"
+//          atag.parent().addClass("active");
+//        });

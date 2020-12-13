@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
 
 from django.views import View
@@ -11,11 +12,13 @@ from radionator.radio.models import RadioStation
 from radionator.radio.forms.radio_forms import RadioStationCreateForm
 
 # Create your views here.
+RadioUser = get_user_model()
 
 
 class RadioIndex(View):
     """"This the base view of the app.
-    Background and cookie mixins don't work with views.View"""
+    Background and cookie mixins don't work with views.View.
+    Their logic needs to be added manually."""
     def get(self, request):
 
         context = {

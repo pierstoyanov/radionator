@@ -8,7 +8,7 @@ from common.BackgroundMixin import BackgroundMixin
 from radionator.profiles.forms import UserProfileSignupForm, SignUpForm
 
 
-User = get_user_model()
+RadioUser = get_user_model()
 
 
 class SignUp(View):
@@ -29,6 +29,7 @@ class SignUp(View):
 
             profile = profile_form.save(commit=False)
             profile.user = user
+            profile.display_name = user.username
             profile.save()
 
             login(request, user)

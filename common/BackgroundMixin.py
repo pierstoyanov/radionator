@@ -11,5 +11,4 @@ class BackgroundMixin(object):
         if self.request.user.is_authenticated:
             profile = Profile.objects.get(user=self.request.user)
             context['background'] = profile.background
-
             return context

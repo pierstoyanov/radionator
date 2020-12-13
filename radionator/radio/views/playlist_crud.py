@@ -1,30 +1,37 @@
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
 from common.BackgroundMixin import BackgroundMixin
 from radionator.radio.models import PlayList
+
+RadioUser = get_user_model()
 
 
 class CreatePlayList(BackgroundMixin, LoginRequiredMixin, CreateView):
     """View to create an new PlayList object"""
     model = PlayList
     template_name = 'radio/playlist_create.html'
-    fields = '__all__'
+    fields = ('list_name', 'is_user_default', 'radio_stations')
 
-    success_url = reverse_lazy('radio index')
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        messages.add_message(self.request, messages.INFO,
+                             f'PlayList {self.object.list_name} created successfully.')
+        return reverse('playlists', kwargs={'pk': self.request.user.pk})
 
 
-#TODO edit pemissions
 class PlayListDetails(BackgroundMixin, LoginRequiredMixin, DetailView):
     """View to display a PlayList object. User can edit self.playlists.
     Elevated can edit any playlist."""
     model = PlayList
     template_name = 'radio/playlist_details.html/'
-
-
-#TODO Edit Delete foor elevated users only
 
 
 class EditPlayList(BackgroundMixin, LoginRequiredMixin, UpdateView):
@@ -36,7 +43,7 @@ class EditPlayList(BackgroundMixin, LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         messages.add_message(self.request, messages.INFO,
                              f'PlayList {self.object.name} edited successfully.')
-        return reverse_lazy('radio index')
+        return reverse('playlists', kwargs={'pk': self.request.user.pk})
 
 
 class DeletePlayList(BackgroundMixin, LoginRequiredMixin, DeleteView):

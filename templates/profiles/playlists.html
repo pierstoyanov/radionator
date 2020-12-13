@@ -1,5 +1,13 @@
 {% extends "common/base/base.html" %}
 {% block content %}
+    {% load bootstrap4 %}
+    {% if user.is_authenticated %}
+        {% buttons %}
+        <a class="btn btn-success btn-lg" href="{% url 'create playlist' %}">Create a Playlist</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'my profile' user.pk %}">My Profile</a>
+        {% endbuttons %}
+    {% endif %}
+
     {% if user.is_authenticated %}
         {% for plist in playlist_list %}
             {{ plist.list_name }}

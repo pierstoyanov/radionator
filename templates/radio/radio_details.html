@@ -1,16 +1,20 @@
 {% extends "common/base/base.html" %}
 {% block content %}
     {% load bootstrap4 %}
-    {% if radiostation %}
-        <div class="station-details">
-            <img scr="{{ radiostation.logo }}" alt="radio logo"/>
-            {{ radiostation.name }}
-            {{ radiostation.genres }}
-            {{ radiostation.description }}
+
+    {% if station %}
+        <div class="radio-logo large"><img src="{{ station.logo.url }}" alt="radio logo"/></div>
+        <div class="font-weight-bold radio-name">{{ station.name }}</div>
+        <div class="font-weight-italic">{{ station.description }}</div>
+        <div class="player">
+            <audio id="innerAudio" controls preload="none" class="radio-player" controlsList="nodownload">
+                <source src="{{ station.url }}"/>
+            </audio>
         </div>
-        {% if user.is_superuser %}
-            <a href="{% url 'edit radio' radiostation.pk radiostation.slug %}" class="btn btn-success">Edit radio</a>
-            <a href="{% url 'delete radio' radiostation.pk radiostation.slug %}" class="btn btn-sm btn-danger">Delete radio</a>
-        {% endif %}
+    {% endif %}
+
+    {% if user.is_superuser %}
+        <a href="{% url 'edit radio' station.pk station.slug %}" class="btn btn-success">Edit radio</a>
+        <a href="{% url 'delete radio' station.pk station.slug %}" class="btn btn-sm btn-danger">Delete radio</a>
     {% endif %}
 {% endblock %}

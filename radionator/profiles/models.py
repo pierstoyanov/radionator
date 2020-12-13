@@ -20,6 +20,7 @@ class Profile(models.Model):
     )
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    display_name = models.CharField(max_length=50, default='NoName')
     background = models.CharField(choices=BACKGROUND_CHOICES, default=BACKGROUND1, max_length=4)
 
     def __str__(self):

@@ -9,7 +9,7 @@ from common.BootstrapFormMixin import BootstrapFormMixin
 from radionator.profiles.forms import LoginForm
 
 
-User = get_user_model()
+RadioUser = get_user_model()
 
 
 class LogIn(BootstrapFormMixin, SuccessMessageMixin, LoginView):

@@ -16,7 +16,7 @@ class RadioStation(models.Model):
     NEWS = 'n1'
 
     STATION_GENRES = (
-        (POP, 'Modern pop'),
+        (POP, 'Pop'),
         (ROCK, 'Rock'),
         (CLASSICAL, 'Classical'),
         (NEWS, 'News')

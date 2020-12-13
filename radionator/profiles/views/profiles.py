@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import View
 
 
@@ -13,7 +13,7 @@ from common.BootstrapFormMixin import BootstrapFormMixin
 from radionator.profiles.forms import UserProfileSignupForm, UserProfileViewForm
 from radionator.profiles.models import Profile
 
-User = get_user_model()
+# RadioUser = get_user_model()
 
 
 class ProfileUpdate(BackgroundMixin, BootstrapFormMixin, UpdateView):
@@ -21,13 +21,12 @@ class ProfileUpdate(BackgroundMixin, BootstrapFormMixin, UpdateView):
     fields = ('background',)
     template_name_suffix = '_update_form'
     # form_class = UserProfileViewForm
-    # success_url = reverse_lazy('my profile')
 
     # def get_object(self):
     #     return Profile.objects.get(user=self.request.user.pk)
 
-    def get_success_url(self):
+    def get_success_url(self, **kwargs):
         messages.add_message(self.request, messages.INFO,
                              f'Background changed successfully.')
-        return reverse_lazy('my profile')
+        return reverse('my profile', kwargs={'pk': self.object.pk})
 

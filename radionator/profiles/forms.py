@@ -14,7 +14,7 @@ class SignUpForm(UserCreationForm):
 class UserProfileSignupForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user', 'default_playlist')
+        exclude = ('user', 'default_playlist', 'display_name')
         widgets = {
             'background': forms.Select(attrs={'class': 'background-choice'})
         }

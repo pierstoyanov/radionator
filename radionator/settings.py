@@ -13,6 +13,8 @@ import os
 from os.path import join
 from pathlib import Path
 
+from django.urls import reverse_lazy
+
 from radionator.local_settings import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -132,9 +134,9 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
-#
-LOGIN_URL = '/profiles/u-login/'
-LOGIN_REDIRECT_URL = '/profiles/myprofile/'
+
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('radio index')
 #
 """AUTH_USER_MODEL uses the default Django value."""
 # AUTH_USER_MODEL = 'auth.User'
