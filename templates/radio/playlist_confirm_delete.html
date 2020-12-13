@@ -1,9 +1,9 @@
 {% extends "common/base/base.html" %}
 {% block content %}
-    <form method="POST" action="{% url 'delete radio' playlist.pk playlist.slug %}">
+    <form method="POST" action="{% url 'delete playlist' playlist.pk playlist.slug %}">
         {% csrf_token %}
         <p class="alert alert-danger">
-            This will DELETE {{ playlist.name }}
+            This will DELETE {{ playlist.list_name }}
             </br>
             ARE YOU SURE YOU WISH TO PROCEED?
         </p>

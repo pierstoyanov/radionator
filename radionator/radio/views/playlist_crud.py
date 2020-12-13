@@ -37,12 +37,16 @@ class PlayListDetails(BackgroundMixin, LoginRequiredMixin, DetailView):
 class EditPlayList(BackgroundMixin, LoginRequiredMixin, UpdateView):
     """Change the RadioStations in the Playlist. Returns MSG if successful"""
     model = PlayList
-    fields = '__all__'
+    fields = ('list_name', 'is_user_default', 'radio_stations')
     template_name_suffix = '_update_form'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
     def get_success_url(self):
         messages.add_message(self.request, messages.INFO,
-                             f'PlayList {self.object.name} edited successfully.')
+                             f'PlayList {self.object.list_name} edited successfully.')
         return reverse('playlists', kwargs={'pk': self.request.user.pk})
 
 
@@ -52,5 +56,5 @@ class DeletePlayList(BackgroundMixin, LoginRequiredMixin, DeleteView):
 
     def get_success_url(self):
         messages.add_message(self.request, messages.INFO,
-                             f'PlayList {self.object.name} DELETED successfully. :(')
-        return reverse_lazy('radio index')
+                             f'PlayList {self.object.list_name} DELETED successfully. :(')
+        return reverse('playlists', kwargs={'pk': self.request.user.pk})
