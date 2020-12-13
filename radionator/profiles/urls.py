@@ -20,3 +20,4 @@ urlpatterns = [
 
 #import signals for creation of user related models
 
+from .receivers import *

@@ -11,7 +11,7 @@
                             <source src="{{ station.url }}"/>
                         </audio>
                     </div>
-                    <a href="{% url 'radio details' station.pk station.slug %}" class="btn btn-lg btn-outline-primary">More</a>
+                    <a href="{% url 'radio details' station.pk %}" class="btn btn-lg btn-outline-primary">More</a>
                 </li>
             {% endfor %}
         </ul>

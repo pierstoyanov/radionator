@@ -6,6 +6,7 @@ from radionator.radio.models import PlayList
 
 RadioUser = get_user_model()
 
+
 @receiver(post_save, sender=RadioUser)
 def user_created(sender, instance, created, *args, **kwargs):
     """This signal track the creation of new users and
@@ -22,4 +23,4 @@ def user_created(sender, instance, created, *args, **kwargs):
 def logout_message(sender, user, request, **kwargs):
     """Display USERNAME logged out message."""
     messages.add_message(request, messages.INFO,
-                         f'{request.user.username} logged out Successfully')
+                         f'{user.username} logged out Successfully')

@@ -16,7 +16,7 @@ urlpatterns = [
         path('about/', About.as_view(), name='about'),
 
         path('add/', AddRadio.as_view(), name='add radio'),
-        path('station/<int:pk>/<slug:slug>/', RadioDetails.as_view(), name='radio details'),
+        path('station/<int:pk>/', RadioDetails.as_view(), name='radio details'),
         path('edit/<int:pk>/<slug:slug>', EditRadio.as_view(), name='edit radio'),
         path('delete/<int:pk>/<slug:slug>/', DeleteRadio.as_view(), name='delete radio'),
 
@@ -27,3 +27,5 @@ urlpatterns = [
         path('playlist/delete/<int:pk>/<slug:slug>/', DeletePlayList.as_view(), name='delete playlist'),
 
         ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+from radionator.profiles.receivers import *
