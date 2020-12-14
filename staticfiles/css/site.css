@@ -1,0 +1,43 @@
+@import "body.css";
+@import "navbar.css";
+@import "radio.css";
+@import "messages.css";
+@import "bg_options.css";
+@import "cookie.css";
+/*COOL BACKGROUND VECTORS HERE > https://www.svgbackgrounds.com/#wintery-sunburst*/
+
+footer {
+    font-style: italic;
+    margin: auto;
+    align-self: center;
+}
+
+hr {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 3em;
+    color: green;
+    align-self: center;
+    padding: 1.5% 0%;
+    flex-wrap: wrap;
+
+}
+
+.body-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0% 20% 0%;
+    padding: 10px;
+    font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+}
+
+.send-button {
+    background: lightgreen;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
