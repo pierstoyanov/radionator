@@ -1,0 +1,65 @@
+.navbar {
+    display: flex;
+    /* margin: 3% 20% 3%; */
+    border-radius: 20px;
+    background-color: lightcyan;
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    padding: 1% 1% 1%;
+    align-content: flex-start;
+    flex-flow: row wrap;
+
+}
+
+.admin {
+    background-color: darkorange;
+}
+
+.brand {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: black;
+    margin: auto;
+}
+
+.item {
+    font-variant: small-caps;
+    /* margin-left: 5%; */
+    color: black;
+    margin: auto;
+}
+
+.navbar-brand:hover {
+    color: lightgreen;
+}
+
+.navbar-item:hover {
+    /*font-size: 1.6em;*/
+    color: lightgreen;
+}
+
+.name{
+    font-weight: bold;
+    text-align: center;
+    background: none;
+}
+
+.user {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    /*margin: auto;*/
+}
+
+.u-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+.greeting {
+    font-style: italic;
+}

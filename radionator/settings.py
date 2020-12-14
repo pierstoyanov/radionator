@@ -15,7 +15,7 @@ from pathlib import Path
 
 from django.urls import reverse_lazy
 
-from radionator.local_settings import *
+SECRET_KEY = '#t0s4vjbs=#-tk@!re11nj)2+nf^#xyw*sys8k_q!j-weo*40w'
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -132,6 +132,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(BASE_DIR, 'static'),
 )
+
+STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
