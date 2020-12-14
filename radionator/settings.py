@@ -15,7 +15,7 @@ from pathlib import Path
 
 from django.urls import reverse_lazy
 
-SECRET_KEY = '#t0s4vjbs=#-tk@!re11nj)2+nf^#xyw*sys8k_q!j-weo*40w'
+from radionator.local_settings import *
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,11 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'radionator.herokuapp.com',
-]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -89,11 +85,11 @@ WSGI_APPLICATION = 'radionator.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'radionator',
+        'USER': 'postgres',
+        'PASSWORD': '0897956992',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -136,8 +132,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(BASE_DIR, 'static'),
 )
-
-STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
