@@ -15,12 +15,8 @@ from radionator.profiles.forms import LoginForm
 RadioUser = get_user_model()
 
 
-class LogIn(BootstrapFormMixin,
-            SuccessMessageMixin,
-            BackgroundMixin,
-            CookeTestResultMixin,
-            CookieTestStageMixin,
-            LoginView):
+class LogIn(BootstrapFormMixin, CookeTestResultMixin,
+            CookieTestStageMixin, LoginView):
     """Generic view for user login."""
     template_name = 'profiles/login.html'
     form_class = LoginForm
