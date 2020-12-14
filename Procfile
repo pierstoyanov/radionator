@@ -1,1 +1,0 @@
-web: gunicorn radionator.wsgi --log-file -
