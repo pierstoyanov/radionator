@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.views.generic import ListView
 
+from common.CookieTestResultMixin import CookeTestResultMixin
+from common.CookieTestStageMixin import CookieTestStageMixin
 from radionator.radio.models import PlayList
 
 RadioUser = get_user_model()
@@ -9,7 +11,10 @@ from common.BackgroundMixin import BackgroundMixin
 
 
 # @requires_login
-class Playlists(BackgroundMixin, ListView):
+class Playlists(BackgroundMixin,
+                CookeTestResultMixin,
+                CookieTestStageMixin,
+                ListView):
     template_name = 'profiles/playlists.html'
     model = PlayList
 

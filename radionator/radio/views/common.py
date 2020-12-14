@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.views import View
 
 from common.BackgroundMixin import BackgroundMixin
+from common.CookieTestResultMixin import test_cookie
 from radionator.profiles.models import Profile
 
 RadioUser = get_user_model()
@@ -17,8 +18,10 @@ class About(BackgroundMixin, View):
     Their logic needs to be added manually."""
 
     def get(self, request):
-        context = {
+        request.session.set_test_cookie()
 
+        context = {
+            'cookie_state': test_cookie(request),
         }
 
         if self.request.user.is_authenticated:
@@ -27,6 +30,6 @@ class About(BackgroundMixin, View):
 
         return render(request, 'about.html', context)
 
-
     def post(self, request):
         return render(request, 'about.html')
+

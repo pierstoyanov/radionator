@@ -17,8 +17,6 @@ from django.urls import reverse_lazy
 
 from radionator.local_settings import *
 
-#key for testing
-SECRET_KEY = '=is!0&let(hsw!d-(^ep61f(dr8_jq!mzp!taft@th34+t$n!n'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

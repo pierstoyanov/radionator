@@ -22,5 +22,5 @@ class RadioStationDisplayForm(forms.Form):
         model = RadioStation
         exclude = ('slug', 'url')
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'radio-name'})
+            # 'name': forms.TextInput(attrs={'class': 'radio-name'})
         }
