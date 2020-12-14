@@ -13,6 +13,7 @@ import os
 from os.path import join
 from pathlib import Path
 
+import django_heroku
 from django.urls import reverse_lazy
 
 SECRET_KEY = '#t0s4vjbs=#-tk@!re11nj)2+nf^#xyw*sys8k_q!j-weo*40w'
@@ -143,3 +144,6 @@ LOGIN_REDIRECT_URL = reverse_lazy('radio index')
 #
 """AUTH_USER_MODEL uses the default Django value."""
 # AUTH_USER_MODEL = 'auth.User'
+
+
+django_heroku.settings(locals())
