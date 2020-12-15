@@ -29,9 +29,8 @@ hr {
 
 .body-content {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0% 20% 0%;
-    padding: 10px;
+    flex-flow: column wrap;
+    margin: 0% 15% 0%;
     font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
 }
 

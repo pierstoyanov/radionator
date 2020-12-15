@@ -3,63 +3,93 @@
     /* margin: 3% 20% 3%; */
     border-radius: 20px;
     background-color: lightcyan;
-    font-size: 1em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
-    padding: 1% 1% 1%;
-    align-content: flex-start;
+    padding: 1%;
+    justify-content: space-around;
+    align-content: stretch;
     flex-flow: row wrap;
-
 }
 
 .admin {
     background-color: darkorange;
 }
 
-.brand {
-    font-size: 1.4em;
-    font-weight: 600;
-    color: black;
-    margin: auto;
-}
-
-.item {
-    font-variant: small-caps;
-    /* margin-left: 5%; */
-    color: black;
-    margin: auto;
-}
-
-.navbar-brand:hover {
-    color: lightgreen;
-}
-
-.navbar-item:hover {
-    /*font-size: 1.6em;*/
-    color: lightgreen;
-}
-
-.name{
-    font-weight: bold;
-    text-align: center;
-    background: none;
-}
-
-.user {
+.brand-box {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    /*margin: auto;*/
+    flex-grow: 1;
+    justify-content: space-around;
+    align-content: center;
 }
 
-.u-item {
+.brand-item {
+    font-size: 1.7em;
+    font-weight: 500;
+    color: white;
+    font-family: "Times New Roman";
+    background: purple;
+    padding: 3%;
+    border-radius: 1%;
+
+
+}
+
+.menu-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-grow: 6;
+    justify-content: space-around;
+    align-content: center;
 }
 
+/*.dropdown {*/
+/*    display: none;*/
+/*    display: flex;*/
+/*    flex-flow: row wrap;*/
+/*    justify-content: space-around;*/
+/*    flex-grow: 6;*/
+/*}*/
+
+/*@media screen*/
+/*    and (max-width: 960px){*/
+/*    .menu-box {*/
+/*        display: none;*/
+/*        display: flex;*/
+/*        flex-flow: row wrap;*/
+/*        justify-content: space-around;*/
+/*        flex-grow: 6;*/
+/*    }*/
+/*    .dropdown {*/
+/*        display: block;*/
+/*    }*/
+/*    */
+/*}*/
+
+.user-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    flex-grow: 3;
+    align-content: center;
+}
+
+.box-item {
+    font-variant: small-caps;
+    color: black;
+    /*!*margin: auto;*!*/
+    /*border: 15px red;*/
+    /*border-radius: 10px;*/
+}
+
+.brand-item:hover {
+    color: blueviolet;
+}
+
+.box-item:hover {
+    color: lightgreen;
+}
 
 .greeting {
-    font-style: italic;
+    font-weight: bold;
 }

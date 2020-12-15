@@ -14,27 +14,23 @@
     {% include 'common/background_css.html' %}
 </head>
 <body>
-    <div class="title">Welcome to Radionator</div>
+    <div class="body-content">
+        <div class="title">Welcome to Radionator</div>
 
-    {% include 'common/navbar.html' %}
-
-
-    {% include 'common/navbar-elevated.html' %}
-
-        <div id='body-content'>
+        {% include 'common/navbar.html' %}
+        {% include 'common/navbar-elevated.html' %}
 
         <hr/>
         {% include 'common/messages.html' %}
 
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
 
         <hr style='width: 50%;'/>
-        </div>
-    <hr/>
 
-    {% include "common/cookie_block.html" %}
-    {% include 'common/footer.html' %}
+        {% include "common/cookie_block.html" %}
+        {% include 'common/footer.html' %}
+    </div>
 
     <script src = "{% static 'javascript/player.js' %}"></script>
     <script src = "{% static 'javascript/muteAll.js' %}"></script>
