@@ -130,15 +130,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    join(BASE_DIR, 'static'),
-)
-
-STATIC_ROOT = join(BASE_DIR, 'staticfiles')
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
-
+STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 LOGIN_URL = reverse_lazy('login')
 LOGIN_REDIRECT_URL = reverse_lazy('radio index')
 #
