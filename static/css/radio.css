@@ -10,6 +10,7 @@
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
+    justify-content: flex-start;
     margin: 1%;
 }
 
@@ -19,14 +20,16 @@
 }
 
 .radio-name {
-    margin: auto;
-    align-items: center;
+    /*flex-grow: 3;*/
+    /*align-items: center;*/
     font-size: 1.6em;
     font-family: 'Courier New', 'Times New Roman', 'Geneva', 'Verdana', 'sans-serif';
 }
 
 .player {
     display: flex;
+    /*flex-grow: 2;*/
+
 }
 
 /*audio {*/

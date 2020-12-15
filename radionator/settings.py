@@ -16,7 +16,7 @@ from pathlib import Path
 import django_heroku
 from django.urls import reverse_lazy
 
-SECRET_KEY = '#t0s4vjbs=#-tk@!re11nj)2+nf^#xyw*sys8k_q!j-weo*40w'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
