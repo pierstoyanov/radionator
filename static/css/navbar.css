@@ -32,6 +32,11 @@
     border-radius: 1%;
 }
 
+.brand-item:hover {
+    color: antiquewhite;
+
+}
+
 .menu-box {
     display: flex;
     flex-flow: row wrap;
