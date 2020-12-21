@@ -18,7 +18,7 @@
     display: flex;
     flex-flow: row wrap;
     flex-grow: 1;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-content: center;
 }
 
@@ -40,9 +40,8 @@
 .menu-box {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-grow: 6;
-    justify-content: space-around;
     align-content: center;
 }
 
