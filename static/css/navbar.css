@@ -1,6 +1,5 @@
 .navbar {
     display: flex;
-    /* margin: 3% 20% 3%; */
     border-radius: 20px;
     background-color: lightcyan;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
@@ -10,6 +9,13 @@
     flex-flow: row wrap;
 }
 
+@media (max-width: 500px) {
+    .navbar {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+}
+
 .admin {
     background-color: darkorange;
 }
@@ -17,71 +23,48 @@
 .brand-box {
     display: flex;
     flex-flow: row wrap;
-    flex-grow: 1;
+    flex: 1 1 auto;
     justify-content: flex-end;
-    align-content: center;
+    align-content: space-around;
 }
 
+/*@media (max-width: 500px) {*/
+
+/*    .brand-box {*/
+/*        flex-flow: column wrap;*/
+/*    }*/
+
+/*}*/
+
 .brand-item {
-    font-size: 1.7em;
-    font-weight: 500;
-    color: white;
-    font-family: "Times New Roman";
     background: purple;
-    padding: 3%;
-    border-radius: 1%;
+    color: white;
 }
 
 .brand-item:hover {
-    color: antiquewhite;
-
+    background: rebeccapurple;
+    color: white !important;
 }
 
 .menu-box {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    flex-grow: 6;
+    flex: 6 1 auto;
     align-content: center;
 }
-
-/*.dropdown {*/
-/*    display: none;*/
-/*    display: flex;*/
-/*    flex-flow: row wrap;*/
-/*    justify-content: space-around;*/
-/*    flex-grow: 6;*/
-/*}*/
-
-/*@media screen*/
-/*    and (max-width: 960px){*/
-/*    .menu-box {*/
-/*        display: none;*/
-/*        display: flex;*/
-/*        flex-flow: row wrap;*/
-/*        justify-content: space-around;*/
-/*        flex-grow: 6;*/
-/*    }*/
-/*    .dropdown {*/
-/*        display: block;*/
-/*    }*/
-/*    */
-/*}*/
 
 .user-box {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    flex-grow: 3;
+    flex: 3 1 auto;
     align-content: center;
 }
 
 .box-item {
     font-variant: small-caps;
     color: black;
-    /*!*margin: auto;*!*/
-    /*border: 15px red;*/
-    /*border-radius: 10px;*/
 }
 
 .brand-item:hover {

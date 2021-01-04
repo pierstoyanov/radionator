@@ -8,22 +8,18 @@
 footer {
     font-style: italic;
     margin: auto;
+    color: darkmagenta;
     align-self: center;
-}
-
-hr {
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .title {
+    display: flex;
+    margin: auto;
     font-weight: 500;
-    font-size: 3em;
+    font-size: 5vw;
     color: green;
     align-self: center;
     padding: 1.5% 0%;
-    flex-wrap: wrap;
-
 }
 
 .body-content {
@@ -32,12 +28,12 @@ hr {
     margin: 0% 15% 0%;
     font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
 }
-@media (max-width: 1440px) {
+@media (max-width: 900px) {
 
     .body-content {
         display: flex;
         flex-flow: column wrap;
-        margin: 0% 5% 0%;
+        margin: 0% 3% 0%;
         font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
     }
 

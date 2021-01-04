@@ -1,17 +1,17 @@
 {% extends "common/base/base.html" %}
 {% block content %}
     {% if stations %}
-        <ul class="radio-station">
+        <ul class="radio-stations">
             {% for station in stations %}
                 <li class="station-li">
-{#                    <div class="radio-logo"><img src="{{ station.logo.url }}" alt="radio logo"/></div>#}
-                    <div class="font-weight-bold radio-name">{{ station.name }}</div>
-                    <div class="player">
+{#                   <div class="radio-logo"><img src="{{ station.logo.url }}" alt="radio logo"/></div>#}
+                    <div class="li-item radio-name">{{ station.name }}</div>
+                    <div class="li-item">
                         <audio id="innerAudio" controls preload="none" class="radio-player" controlsList="nodownload">
                             <source src="{{ station.url }}"/>
                         </audio>
                     </div>
-                    <a href="{% url 'radio details' station.pk %}" class="btn btn-lg btn-outline-primary">More</a>
+                    <a href="{% url 'radio details' station.pk %}" class="btn btn-lg btn-outline-primary li-item">More</a>
                 </li>
             {% endfor %}
         </ul>

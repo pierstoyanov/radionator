@@ -1,60 +1,43 @@
-.radio-station {
+.radio-stations {
     display: flex;
     flex-flow: column wrap;
     margin: 2%;
     padding-left: 0;
-    /*align-content: space-between;*/
+    align-content: center;
+    justify-content: space-around;
+    align-items: stretch;
 }
 
 .station-li {
     display: flex;
+    flex: 1 1 auto;
     flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 1%;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+
+}
+
+.li-item {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
 }
 
 .radio-logo {
     display: flex;
+    flex: 1 1 auto;
     /*max-height: 50px;*/
 }
 
 .radio-name {
     /*flex-grow: 3;*/
     /*align-items: center;*/
+    /*display: flex;*/
+    /*flex: 2 1 auto;*/
+    align-content: center;
     font-size: 1.6em;
+    font-weight: bold;
     font-family: 'Courier New', 'Times New Roman', 'Geneva', 'Verdana', 'sans-serif';
-}
-
-.player {
-    display: flex;
-    /*flex-grow: 2;*/
-
-}
-
-/*audio {*/
-/*!*    display: flex;*!*/
-/*!*    width: 160px;*!*/
-/*!*    height: auto;*!*/
-/*!*    !*margin: auto;*!*!*/
-/*}*/
-
-audio::-webkit-media-controls-panel {
-    background-color: lime;
-}
-
-audio::-webkit-media-controls-play-button  {
-    /*display: inline flex;*/
-}
-
-audio::-webkit-media-controls-timeline {
-  display: none;
-}
-
-audio::-webkit-media-controls-current-time-display  {
-  display: none;
-}
-
-audio::-webkit-media-controls-time-remaining-display {
-  display: none;
 }
