@@ -28,16 +28,16 @@ footer {
     margin: 0% 15% 0%;
     font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
 }
-@media (max-width: 900px) {
 
+@media (max-width: 900px) {
     .body-content {
         display: flex;
         flex-flow: column wrap;
-        margin: 0% 3% 0%;
+        margin: 0% 2% 0%;
         font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
     }
-
 }
+
 .send-button {
     background: lightgreen;
     font-weight: bold;

@@ -34,7 +34,7 @@ class RadioDetails(BackgroundMixin,
     model = RadioStation
     template_name = 'radio/radio_details.html'
     context_object_name = 'station'
-    # queryset = RadioStation.objects.all()
+    queryset = RadioStation.objects.all()
     #
     # def get_context_data(self, *args, **kwargs):
     #     context = super(RadioDetails, self).get_context_data(*args, **kwargs)
