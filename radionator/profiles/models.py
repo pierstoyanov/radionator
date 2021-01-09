@@ -12,11 +12,15 @@ class Profile(models.Model):
     BACKGROUND2 = 'bg_2'
     BACKGROUND3 = 'bg_3'
     BACKGROUND4 = 'bg_4'
+    BACKGROUND5 = 'bg_5'
+    BACKGROUND6 = 'bg_6'
     BACKGROUND_CHOICES = (
         (BACKGROUND1, 'Background 1'),
         (BACKGROUND2, 'Background 2'),
         (BACKGROUND3, 'Background 3'),
         (BACKGROUND4, 'Background 4'),
+        (BACKGROUND4, 'Background 5'),
+        (BACKGROUND4, 'Background 6'),
     )
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
